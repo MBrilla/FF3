@@ -1,0 +1,401 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+:root {
+  --offwhite: #F4F3EF;
+  --yellow: #FFE700;
+  --yellow-orange: #FFD800;
+  --orange: #FCBB00;
+  --cyan: #00C8BB;
+  --cyan-grey: #3A7C78;
+  --cyan-black: #2A3D3B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Montserrat Alternates', 'Montserrat', 'montserrat-alt1', Arial, sans-serif;
+  background-color: var(--offwhite);
+  color: var(--cyan-black);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.main-content {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  padding-top: 60px; /* Add padding to account for fixed navbar */
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hero h1 {
+  font-family: 'Montserrat Alternates', 'Montserrat', 'montserrat-alt1', Arial, sans-serif;
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: white;
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-out forwards;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 90%;
+}
+
+.hero h2 {
+  font-family: 'Montserrat Alternates', 'Montserrat', 'montserrat-alt1', Arial, sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 400;
+  color: white;
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.4;
+  padding-top: 2rem;
+}
+
+.hero p {
+  font-family: 'Montserrat Alternates', 'Montserrat', 'montserrat-alt1', Arial, sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--offwhite);
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-text-container {
+  height: 120px;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-animation {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.word-animation span {
+  font-family: 'Montserrat Alternates', 'Montserrat', 'montserrat-alt1', Arial, sans-serif;
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  position: absolute;
+  opacity: 0;
+  animation: rotateWords 9s linear infinite 0s;
+}
+
+.word-animation span:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.word-animation span:nth-child(3) {
+  animation-delay: 6s;
+}
+
+@keyframes rotateWords {
+  0%, 5% {
+    opacity: 0;
+    transform: translateX(-50px);
+    filter: blur(10px);
+  }
+  10%, 25% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+  30%, 35% {
+    opacity: 0;
+    transform: translateX(50px);
+    filter: blur(10px);
+  }
+  40%, 100% {
+    opacity: 0;
+    transform: translateX(-50px);
+    filter: blur(10px);
+  }
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 60px; /* Account for fixed navbar */
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  ::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  z-index: 9998;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--offwhite); /* Background of the scrollbar track */
+  z-index: auto; /* Ensure the scrollbar track is on top */
+  z-index: 9998;
+}
+
+::-webkit-scrollbar-thumb {
+  z-index: 9998;
+  background-color: var(--cyan-black); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+  border: 3px solid var(--offwhite); /* Adds a border around the thumb */
+  z-index: auto; /* Ensure the scrollbar thumb is on top */
+  }
+}
+
+/* Global image protection */
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: none;
+}
+
+/* Global content protection */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection for specific content */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-description,
+.contact-info,
+.legal-content,
+.process-step p,
+.service-content p {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Re-enable pointer events for interactive elements */
+a,
+button,
+input,
+textarea,
+select,
+.navbar-toggle,
+.category-button,
+.cta-button img,
+.contact-button,
+.form-group button {
+  pointer-events: auto !important;
+}
+
+/* Prevent context menu on images */
+img:not([class*="logo"]) {
+  pointer-events: none;
+}
+
+/* Allow pointer events for logo images */
+.logo-img,
+.navbar-logo img {
+  pointer-events: auto;
+}
+
+/* Maintain clickable areas */
+.navbar-menu,
+.footer-section a,
+.social-links a {
+  pointer-events: auto;
+}
+
+/* Form elements should remain selectable */
+input,
+textarea {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Prevent image dragging in specific components that need interaction */
+.navbar-toggle img,
+.social-icon img {
+  pointer-events: none;
+}
+
+/* Ensure links within protected content work */
+a {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: auto;
+}
+
+/* Allow selection in code blocks or pre elements */
+pre,
+code {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
