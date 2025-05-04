@@ -110,7 +110,7 @@
   top: 0;
   width: 50%;
   height: 100%;
-  object-fit: cover;
+  object-fit:contain;
 }
 
 /* Quote Section */
@@ -182,10 +182,26 @@
 
 /* Tablet Styles */
 @media (max-width: 1024px) {
+  .aboutus-hero {
+    height: 60vh;
+  }
+
+  .aboutus-hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  }
+
+  .aboutus-hero-content h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .aboutus-hero-content p {
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+  }
+
   .mission-content,
   .vision-content {
     width: 60%;
-    padding: 3rem;
+    padding: 2rem;
   }
 
   .mission-content {
@@ -197,136 +213,185 @@
     width: 40%;
   }
 
+  .mission-content h2,
+  .vision-content h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--cyan);
+  }
+
+  .mission-content p,
+  .vision-content p {
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  }
+
   .aboutus-quote {
-    height: 40vh;
+    height: 30vh;
   }
 
   .quote-content h3 {
-    font-size: clamp(1.8rem, 3.5vw, 3rem);
-  }
-
-  .aboutus-content {
-    max-width: 90%;
-    margin: -50px auto 0 auto;
-    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    color: var(--cyan-black);
   }
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  /* General Page adjustments */
   .aboutus-page {
-    /* Ensure no horizontal overflow */
+    background: #f6f7fa;
+    color: #181818;
+    font-family: 'Montserrat-Alt1', Arial, sans-serif;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
   }
 
-  /* Hero adjustments */
+  /* Hero Section */
   .aboutus-hero {
-    height: auto; /* Allow height to adjust to content */
-    min-height: 60vh; /* Set a minimum height */
-    width: 100%; /* Use 100% width instead of 100vw */
-    padding: 4rem 1rem; /* Add padding for spacing */
-    align-items: flex-start; /* Align content top */
+    position: relative;
+    width: 100vw;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background: #232323;
+    overflow: hidden;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutus-hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.7) saturate(1.1);
   }
 
   .aboutus-hero-content {
-    padding: 1rem;
-    /* Animation properties */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out forwards;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 1.8rem 1rem 1.5rem 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%);
+    border-radius: 0 0 1.5rem 1.5rem;
+    text-align: center;
+    color: #fff;
   }
 
-  /* Adjust font sizes for mobile */
   .aboutus-hero-content h1 {
-    font-size: clamp(2.2rem, 8vw, 3.5rem);
-    /* Animation properties */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out 0.2s forwards;
+    font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+    margin-bottom: 0.2rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+    line-height: 1.1;
   }
 
   .aboutus-hero-content h2 {
-    font-size: clamp(1.4rem, 5vw, 2rem);
-    /* Animation properties */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out 0.4s forwards;
+    font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+    color: var(--cyan);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.18);
+    line-height: 1.2;
   }
 
   .aboutus-hero-content p {
-    font-size: clamp(1rem, 4vw, 1.3rem);
-    /* Animation properties */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out 0.6s forwards;
+    font-size: clamp(0.85rem, 2.2vw, 1rem);
+    margin-bottom: 0.2rem;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.13);
+    font-weight: 500;
+    letter-spacing: 0.01em;
   }
 
-  /* Mission & Vision adjustments */
+  /* Mission & Vision Sections */
   .aboutus-mission,
   .aboutus-vision {
-    height: auto; /* Allow height to adjust */
-    flex-direction: column; /* Stack elements */
-    padding: 3rem 1rem; /* Adjust padding */
-    width: 100%; /* Use 100% width */
-  }
-
-  .mission-img,
-  .vision-img {
-    position: relative; /* Change from absolute */
-    width: 100%; /* Make image full width */
-    height: auto; /* Adjust height automatically */
-    max-height: 50vh; /* Limit image height */
-    object-fit: cover;
-    margin-bottom: 2rem; /* Add space below image */
-    order: 1; /* Image first */
-    /* Animation properties */
-    opacity: 0;
-    transform: scale(0.95);
-    animation: scaleIn 1s ease-out forwards;
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
 
   .mission-content,
   .vision-content {
-    width: 100%; /* Make content full width */
-    padding: 1rem; /* Adjust padding */
-    margin-left: 0; /* Remove left margin */
-    order: 2; /* Content second */
-    text-align: center; /* Center text */
-    /* Animation properties */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out 0.3s forwards; /* Add delay */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
   }
 
-  /* Adjust font sizes */
   .mission-content h2,
   .vision-content h2 {
-    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+    margin-bottom: 0.6rem;
+    color: var(--cyan);
   }
 
   .mission-content p,
   .vision-content p {
-    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    font-size: clamp(0.9rem, 2.2vw, 1rem);
+    line-height: 1.4;
+    color: #232323;
+    margin-bottom: 0.6rem;
   }
 
-  /* Quote adjustments */
+  .mission-img,
+  .vision-img {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0.6rem;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  }
+
+  /* Quote Section */
   .aboutus-quote {
-    height: auto; /* Allow height to adjust */
-    padding: 3rem 1rem; /* Adjust padding */
-    width: 100%; /* Use 100% width */
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-dark) 100%);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
 
   .quote-content {
-    padding: 1rem;
+    text-align: center;
+    padding: 0;
+    max-width: 100%;
   }
 
   .quote-content h3 {
-    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
+    line-height: 1.3;
+    color: var(--cyan-black);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
   }
-
-  /* Remove redundant .aboutus-content styles */
-  /* .aboutus-content { ... } */
 }
 
 @keyframes fadeInUp {

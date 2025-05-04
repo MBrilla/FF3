@@ -14,7 +14,7 @@ const AboutUsPage: React.FC = () => {
       </section>
 
       <section className="aboutus-mission">
-      <img src="Farbfink\lebron-mural-los-angeles-modified.jpg" alt="Placeholder LeBron" className="mission-img" />
+      <img src="public\Leistungen\kingfisherGRAD.png" alt="Placeholder LeBron" className="mission-img" />
         <div className="mission-content">
           <h2>ÜBER UNS</h2>
           <p>

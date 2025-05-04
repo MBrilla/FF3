@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h3>Social Media</h3>
           <nav>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/uy.dsgn" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram className="footer-social-icon" />
             </a>
           </nav>

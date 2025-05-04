@@ -24,7 +24,7 @@ type Category = {
 // Keep hardcoded categories for filtering UI for now
 const categories: Category[] = [
   { id: 'all', label: 'ALL' },
-  { id: 'energiestationen', label: 'ENERGIESTATIONEN' },
+  { id: 'freiearbeiten', label: 'FREIE ARBEITEN' },
   { id: 'fassaden', label: 'FASSADEN' },
   { id: 'innenraume', label: 'INNENRÄUME' },
   { id: 'objekte', label: 'OBJEKTE' }, 

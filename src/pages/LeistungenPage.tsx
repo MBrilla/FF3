@@ -37,66 +37,48 @@ const LeistungenPage: React.FC = () => {
   // Parallax Effect using requestAnimationFrame
   useEffect(() => {
     console.log('[Parallax Init]');
-    const parallaxImages = Array.from(document.querySelectorAll('.parallax-image')) as HTMLElement[];
-    
+    // Only select img elements with .parallax-image, not icons or other content
+    const parallaxImages = Array.from(document.querySelectorAll('img.parallax-image')) as HTMLElement[];
     if (parallaxImages.length === 0) {
         console.log('[Parallax Init] No parallax images found on mount.');
-        // return; // Don't return, listener might find them later if rendering is delayed
     }
 
     const handleParallax = () => {
-      // Re-select images inside the frame in case they appear later
-      const currentImages = document.querySelectorAll('.parallax-image'); 
-      if (currentImages.length === 0) { 
-          // Optionally log if still not found
-          // console.log('[Parallax Frame] No images found');
-          rafId.current = requestAnimationFrame(handleParallax); // Continue the loop
+      // Only select img elements with .parallax-image
+      const currentImages = document.querySelectorAll('img.parallax-image');
+      if (currentImages.length === 0) {
+          rafId.current = requestAnimationFrame(handleParallax);
           return;
       }
-      
-      // console.log(`[Parallax Frame] Processing ${currentImages.length} images.`); // Uncomment for verbose logging
       const windowHeight = window.innerHeight;
-
       currentImages.forEach((img, index) => {
         const speed = parseFloat(img.getAttribute('data-parallax-speed') || '0.4');
         const parent = img.parentElement;
         if (!parent) return;
-
         const rect = parent.getBoundingClientRect();
         const elementVisible = rect.top < windowHeight && rect.bottom > 0;
-
         let translateValue = 0;
         if (elementVisible) {
           const elementCenterY = rect.top + rect.height / 2;
           const viewportCenterY = windowHeight / 2;
           const difference = elementCenterY - viewportCenterY;
-          translateValue = difference * -1 * speed * 0.5; 
+          translateValue = difference * -1 * speed * 0.5;
         }
-        
-        // Always log the calculated value for the first image
         if (index === 0) {
             console.log(`[Parallax Frame] Image 0 - Visible: ${elementVisible}, TranslateY: ${translateValue.toFixed(2)}`);
         }
-
         (img as HTMLElement).style.transform = `translateY(${translateValue}px)`;
       });
-
-      // Request the next frame
       rafId.current = requestAnimationFrame(handleParallax);
     };
-
-    // Start the animation loop
-    console.log('[Parallax Init] Starting animation frame loop.');
     rafId.current = requestAnimationFrame(handleParallax);
-
-    // Cleanup function
     return () => {
       console.log('[Parallax Cleanup] Cancelling animation frame.');
       if (rafId.current) {
         cancelAnimationFrame(rafId.current);
       }
     };
-  }, []); // Empty dependency array
+  }, []);
 
   return (
     <div className="leistungen-page">
@@ -130,7 +112,7 @@ const LeistungenPage: React.FC = () => {
         <div className="service-item">
           <div className="service-full-image">
             <img 
-              src="./Leistungen/tigerGRAD.png" 
+              src="./Slider/flowerGRAD.png" 
               alt="Fassaden Vollbild" 
               className="parallax-image" 
               data-parallax-speed="0.4"
@@ -161,7 +143,7 @@ Künstlerisch gestaltete Fassaden schaffen Aufmerksamkeit und Wiedererkennung. M
         <div className="service-item">
           <div className="service-full-image">
             <img 
-              src="./Leistungen/minions2GRAD.png" 
+              src="./Leistungen/tigerGRAD.png" 
               alt="Innenräume Vollbild" 
               className="parallax-image"
               data-parallax-speed="0.3"
@@ -191,7 +173,7 @@ Künstlerisch gestaltete Fassaden schaffen Aufmerksamkeit und Wiedererkennung. M
         <div className="service-item">
           <div className="service-full-image">
             <img 
-              src="./Leistungen/kingfisherGRAD.png" 
+              src="./Leistungen/birdGRAD.png" 
               alt="Objekte Vollbild" 
               className="parallax-image"
               data-parallax-speed="0.4"
@@ -263,6 +245,16 @@ Ob freie Arbeiten oder speziell für Sie angefertigte Unikate – diese Formate 
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Pricing Info Section */}
+      <section className="leistungen-pricing-info">
+        <h3>WAS KOSTET DAS GANZE?</h3>
+        <p>
+          Unsere Arbeiten sind immer individuell auf das Projekt abgestimmt – deshalb können wir keine pauschalen Preise angeben.<br />
+          Die Kosten richten sich nach mehreren Faktoren: dem gewünschten Motiv, der Größe der Fläche, dem Zustand des Untergrunds und dem Aufwand für Vorbereitung und Umsetzung.<br /><br />
+          Melde dich einfach – wir beraten dich gerne und erstellen dir ein unverbindliches Angebot.
+        </p>
       </section>
 
       <section className="contact-section">
