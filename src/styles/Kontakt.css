@@ -1,0 +1,228 @@
+.kontakt-page {
+  border-top:2rem;
+  min-height: 100vh;
+  height: 100vh;
+  background: var(--offwhite);
+  font-family: 'Montserrat-Alt1', Arial, sans-serif !important;
+  font-weight: 900 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.kontakt-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1400px;
+  width: 100%;
+  height: 100%;
+  max-height: 800px;
+}
+
+/* Left Side */
+.kontakt-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kontakt-left h1 {
+  margin-top: 2rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 2rem;
+  color: var(--cyan-black);
+}
+
+.kontakt-left .highlight {
+  color: var(--accent);
+  display: block;
+}
+
+/* Contact Info */
+.contact-info {
+  background: var(--offwhite);
+  border-radius: 8px;
+}
+
+.contact-details {
+  display: grid;
+  gap: 2rem;
+}
+
+.contact-item h3 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+  margin-bottom: 0.5rem;
+  color: var(--cyan-black);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Right Side */
+.kontakt-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Contact Form */
+.contact-form {
+  width: 100%;
+  background: var(--offwhite);
+  border-radius: 8px;
+}
+
+.contact-form h2 {
+  font-size: 1.5rem;
+  color: var(--cyan-black);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: white;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--cyan-black);
+  font-family: 'Montserrat-Alt1', Arial, sans-serif;
+  font-weight: 900;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--cyan-black);
+  opacity: 0.7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--cyan);
+  color: var(--cyan-black);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-family: 'Montserrat-Alt1', Arial, sans-serif;
+  font-weight: 900;
+}
+
+.form-group button:hover {
+  transform: translateY(-2px);
+  background-color: var(--accent-dark);
+}
+
+.form-group button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Success Message */
+.success-message {
+  text-align: center;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.success-message h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  font-size: 1.2rem;
+  color: var(--cyan-black);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .kontakt-container {
+    gap: 2rem;
+    max-height: none;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .kontakt-page {
+    padding: 1rem;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .kontakt-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .kontakt-left {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  .kontakt-left h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+  }
+
+  .contact-details {
+    gap: 1.5rem;
+  }
+
+  .contact-details > div {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  .form-group {
+    margin-bottom: 0.75rem;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+  }
+
+  .form-group button {
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

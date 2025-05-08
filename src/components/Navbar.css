@@ -1,0 +1,266 @@
+:root {
+  --offwhite: #F4F3EF;
+  --yellow: #FFE700;
+  --yellow-orange: #FFD800;
+  --orange: #FCBB00;
+  --cyan: #00C8BB;
+  --cyan-grey: #3A7C78;
+  --cyan-black: #2A3D3B;
+  --background: #121212;
+  --text: #FFFFFF;
+}
+
+.navbar {
+  background-color: var(--offwhite);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: clamp(0.5rem, 2vw, 1.5rem) 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100vw;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  height: clamp(48px, 8vw, 70px);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: clamp(40px, 10vw, 130px);
+  width: auto;
+  z-index: 9999;
+}
+
+.logo-text {
+  height: clamp(30px, 8vw, 150px);
+  width: auto;
+  margin-left: clamp(4px, 1vw, 12px);
+  z-index: 9999;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: clamp(1rem, 4vw, 3rem);
+  align-items: center;
+  z-index: 9999;
+  padding-right: clamp(1rem, 3vw, 2rem);
+}
+
+.nav-link {
+  color: var(--cyan-black);
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  z-index: 9999;
+  font-family: 'Montserrat-alt1', Arial, sans-serif;
+}
+
+.nav-link:hover {
+  color: var(--cyan);
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.navbar-toggle span {
+  width: 24px;
+  height: 2px;
+  background-color: var(--cyan-black);
+  transition: all 0.3s ease;
+}
+
+.navbar-paintdrip {
+  position: absolute;
+  left: -30px;
+  bottom: -180px;
+  width: 300px;
+  height: auto;
+  z-index: 500; /* Lower z-index than navbar */
+  pointer-events: none;
+
+}
+
+.navbar-paintsplatter {
+  position: absolute;
+  top: -200px;
+  right: -304px;
+  width: 650px;
+  height: auto;
+  z-index: 400; /* Lower z-index than navbar */
+  pointer-events: none;
+
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    height: 14vh;
+    min-height: 110px;
+  }
+  .navbar-container {
+    height: 100px;
+    padding: 0 1.5rem;
+  }
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: auto;
+    flex: 0 0 auto;
+  }
+  .logo-img {
+    height: 90px;
+    width: auto;
+    margin-bottom: 0;
+  }
+  .logo-text {
+    height: 140px;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    display: block;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .navbar-toggle {
+    height: 48px;
+    width: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+  .navbar-toggle span {
+    width: 40px;
+    height: 4px;
+    margin: 5px 0;
+    background-color: var(--cyan-black);
+    display: block;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .intro-section {
+    margin-top: 14vh;
+    margin-bottom: 20vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 13vh;
+    min-height: 100px;
+  }
+  .navbar-container {
+    height: 100px;
+    padding: 0 1.5rem;
+  }
+  .logo-img {
+    height: 80px;
+    width: auto;
+  }
+  .logo-text {
+    height: 120px;
+    width: auto;
+  }
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--offwhite);
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-paintdrip {
+    width: 60px;
+    bottom: -8px;
+  }
+  .navbar-paintsplatter {
+    width: 38px;
+    top: -10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 12vh;
+    min-height: 90px;
+  }
+  .navbar-container {
+    height: 90px;
+    padding: 0 1.2rem;
+  }
+  .logo-img {
+    height: 60px;
+    width: auto;
+  }
+  .logo-text {
+    height: 96px;
+    width: auto;
+  }
+}
+
+/* Custom Scrollbar */
+
+/* Dropdown animation */
+@media (max-width: 900px) {
+  .navbar-menu {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .navbar-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}

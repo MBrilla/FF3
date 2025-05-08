@@ -1,0 +1,419 @@
+@font-face {
+  font-family: 'Montserrat-Alt1';
+  src: url('/fonts/montserratAlt1-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+.aboutus-page {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat-Alt1', Arial, sans-serif !important;
+  font-weight: 900 !important;
+  background: var(--offwhite);
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.aboutus-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.aboutus-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.aboutus-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+  z-index: 1;
+}
+
+.aboutus-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.aboutus-hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  color:var(--offwhite);
+}
+
+.aboutus-hero-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  color: var(--accent);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  color:var(--offwhite);
+}
+
+.aboutus-hero-content p {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  color:var(--offwhite);
+}
+
+/* Mission Section */
+.aboutus-mission {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--primary);
+  color:var(--cyan-black);
+}
+
+.mission-content {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  padding: 4rem;
+  margin-left: 50%;
+}
+
+.mission-content h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+.mission-content p {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  line-height: 1.6;
+}
+
+.mission-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  object-fit:contain;
+}
+
+/* Quote Section */
+.aboutus-quote {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+  color:var(--cyan-black);
+}
+
+.quote-content {
+  text-align: center;
+  padding: 2rem;
+  max-width: 1000px;
+  color:var(--cyan-black);
+}
+
+.quote-content h3 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  color:var(--cyan-black);
+}
+
+/* Vision Section */
+.aboutus-vision {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: var(--offwhite);
+}
+
+.vision-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vision-content {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  padding: 4rem;
+  color:var(--cyan-black);
+}
+
+.vision-content h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.vision-content p {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .aboutus-hero {
+    height: 60vh;
+  }
+
+  .aboutus-hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  }
+
+  .aboutus-hero-content h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .aboutus-hero-content p {
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+  }
+
+  .mission-content,
+  .vision-content {
+    width: 60%;
+    padding: 2rem;
+  }
+
+  .mission-content {
+    margin-left: 40%;
+  }
+
+  .mission-img,
+  .vision-img {
+    width: 40%;
+  }
+
+  .mission-content h2,
+  .vision-content h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--cyan);
+  }
+
+  .mission-content p,
+  .vision-content p {
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  }
+
+  .aboutus-quote {
+    height: 30vh;
+  }
+
+  .quote-content h3 {
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    color: var(--cyan-black);
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .aboutus-page {
+    background: #f6f7fa;
+    color: #181818;
+    font-family: 'Montserrat-Alt1', Arial, sans-serif;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero Section */
+  .aboutus-hero {
+    position: relative;
+    width: 100vw;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background: #232323;
+    overflow: hidden;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutus-hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.7) saturate(1.1);
+  }
+
+  .aboutus-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 1.8rem 1rem 1.5rem 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%);
+    border-radius: 0 0 1.5rem 1.5rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  .aboutus-hero-content h1 {
+    font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+    margin-bottom: 0.2rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+    line-height: 1.1;
+  }
+
+  .aboutus-hero-content h2 {
+    font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+    color: var(--cyan);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.18);
+    line-height: 1.2;
+  }
+
+  .aboutus-hero-content p {
+    font-size: clamp(0.85rem, 2.2vw, 1rem);
+    margin-bottom: 0.2rem;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.13);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  /* Mission & Vision Sections */
+  .aboutus-mission,
+  .aboutus-vision {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  .mission-content,
+  .vision-content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .mission-content h2,
+  .vision-content h2 {
+    font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+    margin-bottom: 0.6rem;
+    color: var(--cyan);
+  }
+
+  .mission-content p,
+  .vision-content p {
+    font-size: clamp(0.9rem, 2.2vw, 1rem);
+    line-height: 1.4;
+    color: #232323;
+    margin-bottom: 0.6rem;
+  }
+
+  .mission-img,
+  .vision-img {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0.6rem;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  }
+
+  /* Quote Section */
+  .aboutus-quote {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-dark) 100%);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  .quote-content {
+    text-align: center;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .quote-content h3 {
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
+    line-height: 1.3;
+    color: var(--cyan-black);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Cleaned up unused styles */
