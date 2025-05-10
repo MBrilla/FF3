@@ -37,18 +37,18 @@ const HomePage: React.FC = () => {
               <span className={`pop-word${visibleWords > 2 ? ' visible' : ''}`}>Kontrast.</span>
             </div>
           </div>
-          <h2>Individuelle Gestaltung für Raum & Objekt.</h2>
+          <h2 className="hero-subline">Individuelle Gestaltung für Raum & Objekt.</h2>
         </div>
       </section>
 
       <section className="intro-section">
         <div className="intro-content">
-          <p className="intro-filler">
-            Willkommen bei Farbfink – Kreative Fassadengestaltung & Kunst im Raum
-          </p>
+          <div className="intro-willkommen">Willkommen</div>
           <h1>
-            PLANEN. ENTWERFEN. SPRÜHEN. STAUNEN.
+            Willkommen bei Farbfink 
           </h1>
+          <h1>Kreative Fassadengestaltung & Kunst im Raum</h1>
+          <div className="intro-filler-mobile">kreative Fassadengestaltung & Kunst im Raum</div>
           <h2>
             Wir begleiten jedes Projekt von der Idee bis zum fertigen Werk. Mit Leidenschaft für Kunst, Handwerk und Stil.
           </h2>
