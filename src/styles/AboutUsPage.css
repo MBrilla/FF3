@@ -183,7 +183,7 @@
 /* Tablet Styles */
 @media (max-width: 1024px) {
   .aboutus-hero {
-    height: 60vh;
+    height: 40vh;
   }
 
   .aboutus-hero-content h1 {
@@ -225,7 +225,7 @@
   }
 
   .aboutus-quote {
-    height: 30vh;
+    height: 30px;
   }
 
   .quote-content h3 {
@@ -244,7 +244,7 @@
     padding: 0;
     margin: 0;
     width: 100vw;
-    min-height: 100vh;
+    min-height: 40vh;
     overflow-x: hidden;
   }
 
@@ -261,7 +261,7 @@
     overflow: hidden;
     border-radius: 0 0 1.5rem 1.5rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .aboutus-hero-img {
@@ -273,6 +273,7 @@
     object-fit: cover;
     z-index: 1;
     filter: brightness(0.7) saturate(1.1);
+    object-position: 80% center !important;
   }
 
   .aboutus-hero-content {
@@ -318,12 +319,13 @@
   .aboutus-vision {
     position: relative;
     width: 100%;
-    min-height: auto;
+    min-height: unset;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1.5rem 1rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     background: #fff;
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -340,7 +342,7 @@
   .mission-content h2,
   .vision-content h2 {
     font-size: clamp(1.3rem, 3.5vw, 1.5rem);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
     color: var(--cyan);
   }
 
@@ -349,7 +351,7 @@
     font-size: clamp(0.9rem, 2.2vw, 1rem);
     line-height: 1.4;
     color: #232323;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
   }
 
   .mission-img,
@@ -361,7 +363,8 @@
     aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: 0.6rem;
-    margin: 0 auto 1rem auto;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.06);
   }
 
@@ -369,12 +372,13 @@
   .aboutus-quote {
     position: relative;
     width: 100%;
-    min-height: auto;
+    min-height: unset;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1rem;
-    margin-bottom: 1.2rem;
+    padding: 1.2rem 0.5rem;
+    margin-bottom: 1rem;
     background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-dark) 100%);
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -387,10 +391,10 @@
   }
 
   .quote-content h3 {
-    font-size: clamp(1rem, 2.8vw, 1.2rem);
-    line-height: 1.3;
-    color: var(--cyan-black);
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    color: #00C8BB;
+    font-weight: 900;
+    letter-spacing: 0.01em;
   }
 }
 

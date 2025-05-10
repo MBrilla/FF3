@@ -23,7 +23,7 @@ type Category = {
 
 // Keep hardcoded categories for filtering UI for now
 const categories: Category[] = [
-  { id: 'all', label: 'ALL' },
+  { id: 'alle', label: 'ALLE' },
   { id: 'freiearbeiten', label: 'FREIE ARBEITEN' },
   { id: 'fassaden', label: 'FASSADEN' },
   { id: 'innenraume', label: 'INNENRÄUME' },
@@ -36,7 +36,7 @@ const categories: Category[] = [
 const ProjektePage: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>('alle');
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate(); // Hook for navigation
@@ -83,7 +83,7 @@ const ProjektePage: React.FC = () => {
 
   // Filter projects when category changes
   useEffect(() => {
-    if (selectedCategory === 'all') {
+    if (selectedCategory === 'alle') {
       setFilteredProjects(projects);
     } else {
       setFilteredProjects(

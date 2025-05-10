@@ -82,18 +82,38 @@
 }
 
 .navbar-toggle {
-  display: none;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex;
   flex-direction: column;
-  gap: 4px;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
 .navbar-toggle span {
-  width: 24px;
-  height: 2px;
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 3px;
   background-color: var(--cyan-black);
-  transition: all 0.3s ease;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
 }
+
+.navbar-toggle span:nth-child(1) {
+  top: 7px;
+}
+
+.navbar-toggle span:nth-child(2) {
+  top: 13px;
+}
+
+.navbar-toggle span:nth-child(3) {
+  top: 19px;
+}
+
 
 .navbar-paintdrip {
   position: absolute;
@@ -165,13 +185,9 @@
     z-index: 20;
   }
   .navbar-toggle span {
-    width: 40px;
-    height: 4px;
+    width: 28px;
+    height: 3px;
     margin: 5px 0;
-    background-color: var(--cyan-black);
-    display: block;
-    border-radius: 2px;
-    transition: all 0.3s ease;
   }
   .intro-section {
     margin-top: 14vh;
@@ -227,6 +243,11 @@
     top: -10px;
     right: 10px;
   }
+  .navbar-toggle span {
+    width: 28px;
+    height: 3px;
+    margin: 5px 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -246,6 +267,11 @@
     height: 96px;
     width: auto;
   }
+  .navbar-toggle span {
+    width: 24px;
+    height: 3px;
+    margin: 4px 0;
+  }
 }
 
 /* Custom Scrollbar */
@@ -263,4 +289,15 @@
     transform: translateY(0);
     pointer-events: auto;
   }
+}
+
+/* Burger animation */
+.navbar-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }

@@ -18,14 +18,14 @@ const Navbar: React.FC = () => {
         </div>
         
         <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
-          <Link to="/" className="nav-link">Start</Link>
-          <Link to="/farbfink" className="nav-link">Farbfink</Link>
-          <Link to="/leistungen" className="nav-link">Leistungen</Link>
-          <Link to="/projekte" className="nav-link">Projekte</Link>
-          <Link to="/kontakt" className="nav-link">Kontakt</Link>
+          <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>Start</Link>
+          <Link to="/farbfink" className="nav-link" onClick={() => setIsOpen(false)}>Farbfink</Link>
+          <Link to="/leistungen" className="nav-link" onClick={() => setIsOpen(false)}>Leistungen</Link>
+          <Link to="/projekte" className="nav-link" onClick={() => setIsOpen(false)}>Projekte</Link>
+          <Link to="/kontakt" className="nav-link" onClick={() => setIsOpen(false)}>Kontakt</Link>
         </div>
 
-        <div className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
+        <div className={`navbar-toggle${isOpen ? ' open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
           <span></span>
           <span></span>
           <span></span>

@@ -205,5 +205,12 @@
     margin-top: 0.7rem;
     padding-top: 0.5rem;
     font-size: 0.65rem;
+    
+  }
+  .footer-logo-left,
+  .footer-logo-left img,
+  .footer-logo-img {
+    display: none !important;
   }
 }
+
