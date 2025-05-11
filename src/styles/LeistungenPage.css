@@ -364,7 +364,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .process-section {
     padding: 2rem 0.2rem 1.2rem 0.2rem;
   }

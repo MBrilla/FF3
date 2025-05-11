@@ -16,7 +16,6 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const queries = [
       { name: 'max-width: 400px', mq: window.matchMedia('(max-width: 400px)') },
-      { name: 'max-width: 600px', mq: window.matchMedia('(max-width: 600px)') },
       { name: 'max-width: 900px', mq: window.matchMedia('(max-width: 900px)') },
       { name: 'desktop (min-width: 901px)', mq: window.matchMedia('(min-width: 901px)') },
     ];
