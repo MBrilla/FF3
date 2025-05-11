@@ -159,8 +159,7 @@
   position: relative;
   overflow: hidden;
   line-height: 0;
-  /* Remove background color if not needed */
-  /* background-color: var(--offwhite); */
+  background: var(--offwhite);
 }
 
 .service-full-image > img.parallax-image {
@@ -278,6 +277,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  background: var(--offwhite);
 }
 
 .process-section h2 {
@@ -300,7 +300,7 @@
 }
 
 .process-step {
-  background: #fff;
+  background: var(--offwhite);
   border-radius: 18px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.07);
   padding: clamp(1.5rem, 2vw, 2.2rem);
