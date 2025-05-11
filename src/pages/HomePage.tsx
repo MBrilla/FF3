@@ -14,6 +14,32 @@ const HomePage: React.FC = () => {
   const [visibleWords, setVisibleWords] = useState(0);
 
   useEffect(() => {
+    const queries = [
+      { name: 'max-width: 400px', mq: window.matchMedia('(max-width: 400px)') },
+      { name: 'max-width: 600px', mq: window.matchMedia('(max-width: 600px)') },
+      { name: 'max-width: 900px', mq: window.matchMedia('(max-width: 900px)') },
+      { name: 'desktop (min-width: 901px)', mq: window.matchMedia('(min-width: 901px)') },
+    ];
+
+    function logActiveQuery() {
+      const active = queries.find(q => q.mq.matches);
+      if (active) {
+        console.log('Active media query:', active.name);
+      }
+    }
+
+    queries.forEach(q => q.mq.addEventListener('change', logActiveQuery));
+    logActiveQuery(); // Log on mount
+
+    window.addEventListener('resize', logActiveQuery);
+
+    return () => {
+      queries.forEach(q => q.mq.removeEventListener('change', logActiveQuery));
+      window.removeEventListener('resize', logActiveQuery);
+    };
+  }, []);
+
+  useEffect(() => {
     // Reveal each word in sequence, then stop
     if (visibleWords < 3) {
       const wordTimeout = setTimeout(() => {

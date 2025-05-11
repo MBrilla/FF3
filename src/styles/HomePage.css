@@ -283,8 +283,13 @@
     white-space: normal;
   }
   .pop-word {
-    font-size: clamp(1.2rem, 9vw, 2.1rem) !important;
-    margin-bottom: 0.05rem;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(2.2rem, 11vw, 3.2rem) !important;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.22);
   }
   .hero h2 {
     font-size: clamp(1.1rem, 3vw, 1.3rem) !important;
@@ -351,8 +356,14 @@
     border-radius: 18px;
   }
   .hero-subline {
-    margin-top: 0.2rem !important;
-    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 5rem !important;
+    margin-bottom: -5rem !important;
+    color: #fff;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.18);
+    font-size: clamp(1.1rem, 5vw, 1.5rem) !important;
+    font-weight: 700;
   }
 }
 
@@ -492,7 +503,13 @@
     max-height: 38vh;
   }
   .pop-word {
-    font-size: clamp(0.9rem, 6vw, 1.8rem) !important;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(2.2rem, 11vw, 3.2rem) !important;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.22);
     margin-bottom: 0.05rem;
   }
   .hero h2 {
@@ -517,8 +534,14 @@
     margin-bottom: -2rem !important;
   }
   .hero-subline {
-    margin-top: 0.2rem !important;
-    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 5rem !important;
+    margin-bottom: -5rem !important;
+    color: #fff;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.18);
+    font-size: clamp(1.1rem, 5vw, 1.5rem) !important;
+    font-weight: 700;
   }
 }
 
