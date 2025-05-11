@@ -85,9 +85,9 @@ const LeistungenPage: React.FC = () => {
       <section className="hero-section">
         <div className="hero-content-wrapper">
           <div className="hero-heading">
-            <h1>
-              <span className="animated-line line-1">MEHR ALS</span><br />
-              <span className="animated-line line-2">FARBE AUF</span><br />
+            <h1 className="text-align-left">
+              <span className="animated-line line-1">MEHR ALS</span>
+              <span className="animated-line line-2">FARBE AUF</span>
               <span className="animated-line line-3">MAUERN.</span>
             </h1>
           </div>

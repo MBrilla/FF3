@@ -43,12 +43,10 @@ const HomePage: React.FC = () => {
 
       <section className="intro-section">
         <div className="intro-content">
-          <div className="intro-willkommen">Willkommen</div>
           <h1>
             Willkommen bei Farbfink 
           </h1>
           <h1>Kreative Fassadengestaltung & Kunst im Raum</h1>
-          <div className="intro-filler-mobile">kreative Fassadengestaltung & Kunst im Raum</div>
           <h2>
             Wir begleiten jedes Projekt von der Idee bis zum fertigen Werk. Mit Leidenschaft für Kunst, Handwerk und Stil.
           </h2>
