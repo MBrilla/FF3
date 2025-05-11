@@ -130,6 +130,7 @@
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  background-color: var(--offwhite);
 }
 
 .intro-content h1 {

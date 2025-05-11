@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
             Wir begleiten jedes Projekt von der Idee bis zum fertigen Werk. Mit Leidenschaft für Kunst, Handwerk und Stil.
           </h2>
           <Link to="/projekte" className="projekte-image-button">
-            <img src="./output-onlinepngtools (1).png" alt="Projekte" style={{ width: '320px', maxWidth: '90%', background: 'var(--offwhite)', borderRadius: '32px', boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }} />
+            <img src="./output-onlinepngtools (1).png" alt="Projekte" style={{ width: '320px', maxWidth: '90%', borderRadius: '32px', boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }} />
           </Link>
         </div>
       </section>
