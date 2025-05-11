@@ -313,6 +313,7 @@
     align-items: center;
     gap: 1.2rem;
     padding: 0;
+    background: var(--offwhite);
   }
   .intro-filler {
     font-size: clamp(1.1rem, 3vw, 1.3rem);
@@ -398,7 +399,7 @@
     text-shadow: 1px 1px 6px rgba(0,0,0,0.18);
   }
   .intro-content {
-    background: #fff;
+    background: var(--offwhite);
     border-radius: 1.2rem;
     box-shadow: 0 4px 18px rgba(0,0,0,0.10);
     padding: 1.2rem 0.7rem 1.2rem 0.7rem;
