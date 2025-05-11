@@ -1,16 +1,20 @@
 /* Hero Section */
 .homepage-container {
   width: 100%;
+  min-height: -webkit-fill-available;
 }
 
 .hero {
   display: grid;
   grid-template-areas: 'slider' 'content';
   grid-template-rows: 1fr auto;
-  height: 100vh;
+  height: 100vh; /* Fallback */
+  height: -webkit-fill-available;
   width: 100vw;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh; /* Fallback */
+  min-height: -webkit-fill-available;
+  max-height: 100vh; /* Fallback */
+  max-height: -webkit-fill-available;
   position: relative;
   color: white;
   text-align: center;
@@ -24,9 +28,12 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
+  height: 100vh; /* Fallback */
+  height: -webkit-fill-available;
+  min-height: 100vh; /* Fallback */
+  min-height: -webkit-fill-available;
+  max-height: 100vh; /* Fallback */
+  max-height: -webkit-fill-available;
   z-index: 1;
 }
 
@@ -36,9 +43,12 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
+  height: 100vh; /* Fallback */
+  height: -webkit-fill-available;
+  min-height: 100vh; /* Fallback */
+  min-height: -webkit-fill-available;
+  max-height: 100vh; /* Fallback */
+  max-height: -webkit-fill-available;
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -385,12 +395,17 @@
     min-height: 60vw;
     height: 60vw;
     max-height: 80vw;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
   .hero-content {
+    padding-top: calc(4.5rem + env(safe-area-inset-top));
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    padding-left: calc(1rem + env(safe-area-inset-left));
+    padding-right: calc(1rem + env(safe-area-inset-right));
     border-radius: 1rem;
-    padding: 4.5rem 0.5rem 0rem 0.5rem!important;
     margin: 2.5rem 0.5rem 0 0.5rem!important;
     width: calc(100vw - 1rem)!important;
     max-width: 500px!important;
