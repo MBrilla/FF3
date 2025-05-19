@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
-import Masonry from 'react-masonry-css';
 import '../styles/ProjectDetailPage.css'; // We'll create this CSS file next
 
 type Project = {
@@ -77,14 +76,6 @@ const ProjectDetailPage: React.FC = () => {
     // This case should ideally be covered by the error state, but added for robustness
     return <div className="error-message page-padding">Projekt konnte nicht geladen werden.</div>;
   }
-
-  // Masonry layout breakpoints
-  const breakpointColumnsObj = {
-    default: 3, // default number of columns
-    1100: 3,    // 3 columns for viewport width 1100px and above
-    700: 2,     // 2 columns for viewport width 700px to 1099px
-    500: 1      // 1 column for viewport width below 700px
-  };
 
   // --- Render Project Details --- 
   return (
