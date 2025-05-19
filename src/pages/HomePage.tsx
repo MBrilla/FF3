@@ -71,7 +71,7 @@ const HomePage: React.FC = () => {
           <h1>
             Willkommen bei Farbfink 
           </h1>
-          <h1>Kreative Fassadengestaltung & Kunst im Raum</h1>
+          <h1>Kreative <span className="no-break-word">Fassadengestaltung</span> & Kunst im Raum</h1>
           <h2>
             Wir begleiten jedes Projekt von der Idee bis zum fertigen Werk. Mit Leidenschaft für Kunst, Handwerk und Stil.
           </h2>

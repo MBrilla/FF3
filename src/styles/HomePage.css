@@ -636,3 +636,12 @@ body, .homepage-container {
     max-width: 500px;
   }
 }
+
+.no-break-word {
+  white-space: nowrap;
+}
+
+.intro-content h1, .hero-section h1 {
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
