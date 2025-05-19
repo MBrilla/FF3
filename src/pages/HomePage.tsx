@@ -80,6 +80,10 @@ const HomePage: React.FC = () => {
           </Link>
         </div>
       </section>
+      {/* SEO keywords for search engines, visually hidden */}
+      <div style={{position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden'}} aria-hidden="true">
+        Graffiti Künstler, Graffiti Agentur, Graffiti Auftragsarbeiten, Wandgestaltung Graffiti, Streetart Künstler, Fassadengestaltung, Graffiti Design, Graffiti Kunstwerke, Graffiti für Innenräume, Graffiti für Außenfassaden, Graffiti auf Stromkästen, Graffiti auf Trafostationen, Graffiti auf Leinwänden, Graffiti auf Aluminiumverbundplatten, Graffiti für Karnevalswagen, Graffiti für Events, Graffiti Künstler Warendorf, Graffiti Künstler Münster, Graffiti Künstler NRW, Graffiti Agentur Warendorf, Graffiti Agentur Münster, Graffiti Agentur NRW, Individuelle Graffiti Gestaltung, Professionelle Graffiti Kunst, Graffiti Künstler beauftragen, Graffiti Workshop, Graffiti Kurs, Graffiti für Unternehmen, Graffiti für Privatpersonen
+      </div>
     </div>
   );
 };
