@@ -1,0 +1,29 @@
+.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.drag-over {
+  border: 2px dashed var(--primary);
+  background-color: rgba(var(--primary-rgb), 0.1);
+}
+
+/* Add smooth transitions for all drag and drop interactions */
+.gallery-item {
+  transition: all 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Add a visual indicator for the drop target */
+.gallery-item.drag-over::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px dashed var(--primary);
+  border-radius: 0.5rem;
+  pointer-events: none;
+} 

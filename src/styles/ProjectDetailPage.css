@@ -1,169 +1,144 @@
 /* Styles for ProjectDetailPage */
 
 .project-detail-page {
-  max-width: 1200px;
+  min-height: 100vh;
+  background: var(--offwhite);
+  font-family: 'Montserrat-Alt1', Arial, sans-serif !important;
+  font-weight: 900 !important;
+  padding-top: 80px;
+}
+
+.project-detail-container {
+  max-width: 1400px;
   margin: 0 auto;
-  /* page-padding class adds base padding */
+  padding: 2rem;
 }
 
-.page-padding {
-   padding: 90px 2rem 2rem; /* Adjust top padding for navbar */
-}
-
-.loading-indicator,
-.error-message {
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 4rem 1rem;
-}
-
-.project-detail-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
-}
-
-.project-detail-header h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--cyan-black);
-}
-
-.project-detail-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-.project-detail-image-container {
+/* Main Image Section */
+.main-image-section {
   width: 100%;
+  margin-bottom: 2rem;
 }
 
-.project-detail-main-image {
+.main-image {
   width: 100%;
   height: auto;
   max-height: 70vh;
-  object-fit: contain; /* Use contain to see full image */
-  display: block;
-  border-radius: 4px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Project Info Section */
+.project-detail-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
 .project-detail-info h2 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
   color: var(--cyan-black);
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 1rem;
 }
 
 .meta-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns for meta */
-  gap: 1rem 1.5rem; /* Row gap, Column gap */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .meta-item {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.5rem;
 }
 
 .meta-item-full-width {
-    grid-column: 1 / -1; /* Make categories span full width */
+  grid-column: 1 / -1;
 }
 
 .meta-label {
-  font-size: 0.85rem;
-  color: var(--cyan-black);
-  opacity: 0.7;
-  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  text-transform: uppercase;
 }
 
 .meta-value {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--cyan-black);
 }
 
 .project-description-text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  color: var(--cyan-black);
+  color: var(--gray-700);
+  white-space: pre-wrap;
 }
 
-.project-detail-gallery h2 {
-  font-size: 1.8rem;
-  margin-top: 3rem; /* Add space above gallery */
+/* Gallery Section */
+.gallery-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.gallery-section h2 {
+  font-size: 1.5rem;
+  color: var(--cyan-black);
   margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Loading and Error States */
+.loading-indicator,
+.error-message {
   text-align: center;
-  color: var(--cyan-black);
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--gray-600);
 }
 
-/* --- react-masonry-css styles --- */
-/* Remove old .gallery-grid styles */
-/* .gallery-grid { ... } */
-
-/* Remove old .gallery-image-item styles */
-/* .gallery-image-item { ... } */
-/* .gallery-image-item img { ... } */
-/* .gallery-image-item img:hover { ... } */
-
-/* Masonry Grid Container */
-.my-masonry-grid {
-  display: flex;
-  margin-left: -15px; /* Adjust gutter size */
-  width: auto; /* Let flexbox handle width */
+.error-message {
+  color: var(--red-600);
 }
 
-/* Masonry Grid Columns */
-.my-masonry-grid_column {
-  padding-left: 15px; /* Column gutter */
-  background-clip: padding-box;
-}
-
-/* Masonry Grid Items (your images) */
-.my-masonry-grid_column > div.masonry-image-item {
-  margin-bottom: 15px; /* Space between items vertically */
-  overflow: hidden; /* Optional: if you want rounded corners etc. */
-  border-radius: 4px; /* Optional: rounded corners */
-}
-
-/* Ensure images within items are responsive */
-.masonry-image-item img {
-    display: block; /* Remove extra space below image */
-    width: 100%;
-    height: auto; /* Let height adjust based on aspect ratio */
-    transition: transform 0.3s ease;
-}
-
-.masonry-image-item img:hover {
-    transform: scale(1.03); /* Subtle hover scale */
-}
-
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .page-padding {
-     padding: 80px 1rem 1rem; /* Adjust padding */
+  .project-detail-container {
+    padding: 1rem;
   }
-  .project-detail-main {
-     grid-template-columns: 1fr; /* Stack columns */
-     gap: 2rem;
-  }
-  .project-detail-image-container {
-     max-height: 60vh;
-  }
+
   .meta-grid {
-     grid-template-columns: 1fr; /* Single column meta */
-     gap: 0.8rem;
+    grid-template-columns: 1fr;
   }
-  .my-masonry-grid {
-     margin-left: -10px;
-  }
-  .my-masonry-grid_column {
-     padding-left: 10px;
-  }
-  .my-masonry-grid_column > div.masonry-image-item {
-     margin-bottom: 10px;
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 } 

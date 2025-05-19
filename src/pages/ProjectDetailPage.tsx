@@ -88,66 +88,65 @@ const ProjectDetailPage: React.FC = () => {
 
   // --- Render Project Details --- 
   return (
-    <div className="project-detail-page page-padding">
-      {/* Header/Title */}
-      <div className="project-detail-header">
-        <h1>{project.title}</h1>
-      </div>
+    <div className="project-detail-page">
+      {loading ? (
+        <div className="loading-indicator page-padding">Loading Projekt...</div>
+      ) : error ? (
+        <div className="error-message page-padding">Error: {error}</div>
+      ) : !project ? (
+        <div className="error-message page-padding">Projekt konnte nicht geladen werden.</div>
+      ) : (
+        <div className="project-detail-container">
+          {/* Main Image Section */}
+          <div className="main-image-section">
+            <img src={project.image} alt={project.title} className="main-image" />
+          </div>
 
-      {/* Main Content Area (e.g., image + details) */}
-      <div className="project-detail-main">
-        <div className="project-detail-image-container">
-           <img src={project.image} alt={project.title} className="project-detail-main-image" />
-        </div>
-        <div className="project-detail-info">
-           <h2>Details</h2>
-           <div className="meta-grid">
+          {/* Project Info Section */}
+          <div className="project-detail-info">
+            <h2>Details</h2>
+            <div className="meta-grid">
               <div className="meta-item">
-                  <span className="meta-label">Kunde:</span>
-                  <span className="meta-value">{project.kunde}</span>
+                <span className="meta-label">Kunde:</span>
+                <span className="meta-value">{project.kunde}</span>
               </div>
               <div className="meta-item">
-                  <span className="meta-label">Datum:</span>
-                  <span className="meta-value">{project.datum}</span>
+                <span className="meta-label">Datum:</span>
+                <span className="meta-value">{project.datum}</span>
               </div>
               <div className="meta-item">
-                  <span className="meta-label">Standort:</span>
-                  <span className="meta-value">{project.standort}</span>
+                <span className="meta-label">Standort:</span>
+                <span className="meta-value">{project.standort}</span>
               </div>
               <div className="meta-item">
-                  <span className="meta-label">Fläche:</span>
-                  <span className="meta-value">{project.flache}</span>
+                <span className="meta-label">Fläche:</span>
+                <span className="meta-value">{project.flache}</span>
               </div>
-              {/* Add Categories if desired */}
               {project.categories && project.categories.length > 0 && (
-                 <div className="meta-item meta-item-full-width">
-                   <span className="meta-label">Kategorien:</span>
-                   <span className="meta-value">{project.categories.join(', ')}</span>
-                 </div>
+                <div className="meta-item meta-item-full-width">
+                  <span className="meta-label">Kategorien:</span>
+                  <span className="meta-value">{project.categories.join(', ')}</span>
+                </div>
               )}
-           </div>
-           
-           <h2>Beschreibung</h2>
-           <p className="project-description-text">{project.description}</p>
-        </div>
-      </div>
+            </div>
+            
+            <h2>Beschreibung</h2>
+            <p className="project-description-text">{project.description}</p>
+          </div>
 
-      {/* Masonry Image Gallery */}
-      {project.images && project.images.length > 0 && (
-        <div className="project-detail-gallery">
-           <h2>Galerie</h2>
-           <Masonry
-              breakpointCols={breakpointColumnsObj}
-              className="my-masonry-grid"       // Your custom class for the grid container
-              columnClassName="my-masonry-grid_column" // Your custom class for columns
-            >
-             {project.images.map((imgUrl, index) => (
-               // Each child in Masonry is an item
-               <div className="masonry-image-item" key={index}>
-                 <img src={imgUrl} alt={`${project.title} - Gallery Image ${index + 1}`} style={{ width: '100%', display: 'block' }}/>
-               </div>
-            ))}
-           </Masonry>
+          {/* Gallery Section */}
+          {project.images && project.images.length > 0 && (
+            <div className="gallery-section">
+              <h2>Galerie</h2>
+              <div className="gallery-grid">
+                {project.images.map((image, index) => (
+                  <div key={index} className="gallery-item">
+                    <img src={image} alt={`${project.title} - Bild ${index + 1}`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

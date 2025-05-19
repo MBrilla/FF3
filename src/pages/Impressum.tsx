@@ -13,6 +13,7 @@ const Impressum: React.FC = () => {
           <p>Farbfink Fassadengestaltung</p>
           <p>Kampstraße 1</p>
           <p>48336 Sassenberg</p>
+          <p>Steuernummer: 346/5103/7734</p>
         </div>
 
         <div className="legal-section">
@@ -24,7 +25,8 @@ const Impressum: React.FC = () => {
         <div className="legal-section">
           <h3>Umsatzsteuer-ID</h3>
           <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
-          <p>[Ihre USt-IdNr.]</p>
+          <p>DE123456789 (Beispiel – bitte mit Ihrer echten USt-IdNr. ersetzen)</p>
+          <p>Steuernummer: 346/5103/7734</p>
         </div>
 
         <div className="legal-section">
