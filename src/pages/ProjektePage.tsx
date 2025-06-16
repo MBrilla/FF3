@@ -25,6 +25,7 @@ type Category = {
 const categories: Category[] = [
   { id: 'alle', label: 'ALLE' },
   { id: 'freiearbeiten', label: 'FREIE ARBEITEN' },
+  { id: 'zuverkaufen', label: 'ZU VERKAUFEN' },
   { id: 'fassaden', label: 'FASSADEN' },
   { id: 'innenraume', label: 'INNENRÄUME' },
   { id: 'objekte', label: 'OBJEKTE' }, 
